@@ -12,7 +12,7 @@ def main(source, destination):
     for method in ("delivery", "pickup"):
         rows = [
             row for row in orders
-            if row["status"] == "canceled" and row["method"] == method
+            if row["status"] == "confirmed" and row["method"] == method
         ]
         with (destination / f"{method}.csv").open(
             "w", newline="", encoding="utf-8"
